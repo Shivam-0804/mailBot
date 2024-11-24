@@ -1,0 +1,13 @@
+{
+  "name": "mailbot",
+  "version": "1.0.0",
+  "main": "app.py",
+  "scripts": {
+    "test": "python app.py"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+

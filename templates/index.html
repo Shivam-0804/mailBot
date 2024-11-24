@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mailbot</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <!-- Include Socket.IO -->
+  </head>
+  <body>
+    <div class="email-app">
+      <header class="header">
+        <div class="logo">mailBot</div>
+        <input
+          type="text"
+          class="search-bar"
+          id="search-bar"
+          placeholder="Search mail"
+          onkeyup="filterEmails()"
+        />
+        <div class="buttons">
+          <button class="compose-btn" onclick="openComposeModal()">
+            Compose
+          </button>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <ul>
+          <li onclick="loadInbox()">Inbox</li>
+          <li onclick="loadSummary()">Summary</li>
+          <li onclick="loadTasks()">Tasks</li>
+        </ul>
+      </aside>
+
+      <main class="email-list" id="email-list">
+        <!-- Emails will be dynamically populated here -->
+      </main>
+    </div>
+
+    <div id="compose-modal" class="compose-modal">
+      <div class="compose-modal-content">
+        <h2>Compose Email</h2>
+        <label for="to-email">To:</label>
+        <input
+          type="email"
+          id="to-email"
+          class="email-input"
+          placeholder="Recipient email"
+        />
+        <label for="subject">Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          class="email-input"
+          placeholder="Subject"
+        />
+        <label for="body">Body:</label>
+        <textarea
+          id="body"
+          class="email-input"
+          placeholder="Type your message..."
+          rows="5"
+        ></textarea>
+
+        <div class="modal-actions">
+          <button onclick="sendEmail()">Send</button>
+          <button onclick="closeComposeModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-command-line">
+      <input
+        type="text"
+        id="command-line"
+        class="command-input"
+        placeholder="Type a command..."
+      />
+      <button class="send-command-btn" onclick="sendCommand()">Send</button>
+
+      <ul id="suggestions" class="suggestions-list"></ul>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script> -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
