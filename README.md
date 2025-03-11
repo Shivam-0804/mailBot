@@ -63,9 +63,9 @@ To run MailBot locally, follow these steps:
    Open your web browser and go to `http://localhost:5000` (or the specified port).
 
 ## Contributors
-- **Shivam Chaudhary** - 22803025 (B12)
-- **Abhinav Singh** - 22803010 (B12)
-- **Aryan Singh** - 22803008 (B12)
+- Shivam-0804
+- abhis1n
+- ocidemus
 
 ## License
 This project is licensed under the MIT License.
